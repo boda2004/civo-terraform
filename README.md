@@ -21,7 +21,7 @@ Go to https://www.civo.com/account/kubernetes and create a cluster:
 Run
 
 ```shell
-civo k3s create playground --remove-applications 'traefik' --nodes 3 --size g3.medium --wait
+civo k3s create playground --remove-applications 'Traefik' --nodes 3 --size g3.medium --wait
 ```
 
 ### Initialize terraform
