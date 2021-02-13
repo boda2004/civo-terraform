@@ -7,12 +7,22 @@ persistence (not from marketplace!), Nginx as ingress controller, cert-manager w
 
 ### Create cluster
 
+#### On civo site
+
 Go to https://www.civo.com/account/kubernetes and create a cluster:
 
 - name `playground`
 - 3 instances
 - size `Medium`
 - deselected `Traefic`
+
+#### From cli
+
+Run
+
+```shell
+civo k3s create playground --remove-applications 'traefik' --nodes 3 --size g3.medium --wait
+```
 
 ### Initialize terraform
 
@@ -27,7 +37,9 @@ terraform init
 Create file `civo.auto.tfvars` based on `civo.auto.tfvars.dist`
 
 ### Comment out `helm` and `kubectl` providers in file `provider.tf`
-These providers depend on kubernetes cluster configuration values, which do not exist at this point, so have to be commented out temporarily.
+
+These providers depend on kubernetes cluster configuration values, which do not exist at this point, so have to be
+commented out temporarily.
 
 ### Import cluster intro terraform
 
@@ -38,6 +50,7 @@ terraform import civo_kubernetes_cluster.playground <Cluster ID>
 ```
 
 ### Unomment `helm` and `kubectl` providers in file `provider.tf`
+
 :)
 
 ### Apply
