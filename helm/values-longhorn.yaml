@@ -1,6 +1,6 @@
 ingress:
   enabled: true
-  host: longhorn.civo.boda.org.ua
+  host: ""
   annotations:
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
