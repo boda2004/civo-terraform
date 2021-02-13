@@ -9,7 +9,7 @@ persistence (not from marketplace!), Nginx as ingress controller, cert-manager w
 
 Go to https://www.civo.com/account/kubernetes and create a cluster:
 
-- name `playground` (or whichever you like)
+- name `playground`
 - 3 instances
 - size `Medium`
 - deselected `Traefic`
@@ -51,4 +51,6 @@ terraform apply
 ## Known issues and limitations
 
 - Can not create a cluster from terraform (waiting for https://github.com/civo/terraform-provider-civo)
+- Cluster name has to be `playground` (terraform will try to rename if it differs)
 - Cluster size (`3` nodes) and nodes type (`g3.medium` type) hardcoded for simplicity.
+- commenting out of providers required for initial import of the cluster
