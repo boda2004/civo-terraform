@@ -14,6 +14,14 @@ Go to https://www.civo.com/account/kubernetes and create a cluster:
 - size `Medium`
 - deselected `Traefic`
 
+### Initialize terraform
+
+Run
+
+```shell
+terraform init
+```
+
 ### Create `civo.auto.tfvars` file (optional)
 
 Create file `civo.auto.tfvars` based on `civo.auto.tfvars.dist`
