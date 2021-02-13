@@ -26,6 +26,9 @@ terraform init
 
 Create file `civo.auto.tfvars` based on `civo.auto.tfvars.dist`
 
+### Comment out `helm` and `kubectl` providers in file `provider.tf`
+These providers depend on kubernetes cluster configuration values, which do not exist at this point, so have to be commented out temporarily.
+
 ### Import cluster intro terraform
 
 Run
@@ -33,6 +36,9 @@ Run
 ```shell
 terraform import civo_kubernetes_cluster.playground <Cluster ID>
 ```
+
+### Unomment `helm` and `kubectl` providers in file `provider.tf`
+:)
 
 ### Apply
 
