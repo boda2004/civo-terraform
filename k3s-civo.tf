@@ -5,6 +5,18 @@ resource "civo_kubernetes_cluster" "playground" {
   target_nodes_size = element(data.civo_instances_size.medium.sizes, 0).name
 }
 
+resource "civo_dns_domain_name" "main" {
+  name = var.civo-domain
+}
+resource "civo_dns_domain_record" "www" {
+  domain_id  = civo_dns_domain_name.main.id
+  type       = "CNAME"
+  name       = "*.civo"
+  value      = local.cluster-dns
+  ttl        = 600
+  depends_on = [civo_dns_domain_name.main]
+}
+
 resource "helm_release" "nginx-ingress" {
   name             = "nginx-ingress"
   repository       = "https://charts.bitnami.com/bitnami"
