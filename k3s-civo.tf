@@ -62,7 +62,7 @@ resource "helm_release" "longhorn" {
   ]
   set {
     name  = "ingress.host"
-    value = "longhorn.${local.cluster_dns}"
+    value = "longhorn.${local.cluster-dns}"
   }
   depends_on = [
   civo_kubernetes_cluster.playground]

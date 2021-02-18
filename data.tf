@@ -7,7 +7,7 @@ data "civo_instances_size" "medium" {
 }
 
 locals {
-  cluster_dns                        = civo_kubernetes_cluster.playground.dns_entry
+  cluster-dns                        = civo_kubernetes_cluster.playground.dns_entry
   kubeconfig                         = yamldecode(civo_kubernetes_cluster.playground.kubeconfig)
   cluster-server                     = local.kubeconfig.clusters[0].cluster.server
   cluster-certificate-authority-data = base64decode(local.kubeconfig.clusters[0].cluster.certificate-authority-data)

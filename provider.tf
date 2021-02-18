@@ -1,5 +1,5 @@
 provider "civo" {
-  token = var.civo_token
+  token = var.civo-token
 }
 
 provider "kubernetes" {
