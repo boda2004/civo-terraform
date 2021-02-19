@@ -2,7 +2,7 @@ ingress:
   enabled: true
   host: ""
   annotations:
-    kubernetes.io/ingress.class: nginx
+    kubernetes.io/ingress.class: istio
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
   tls: true
   tlsSecret: longhorn-tls

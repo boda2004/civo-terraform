@@ -7,7 +7,6 @@ provider "kubernetes" {
   client_certificate     = local.user-client-certificate-data
   client_key             = local.user-client-key-data
   cluster_ca_certificate = local.cluster-certificate-authority-data
-  load_config_file       = false
 }
 
 provider "helm" {
@@ -24,5 +23,4 @@ provider "kubectl" {
   client_certificate     = local.user-client-certificate-data
   client_key             = local.user-client-key-data
   cluster_ca_certificate = local.cluster-certificate-authority-data
-  load_config_file       = false
 }
